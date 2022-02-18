@@ -26,7 +26,7 @@ func CalcSquare(sideLen float64, sidesNum SideNums) float64 {
 		var p float64 = (sideLen + sideLen + sideLen) / 2
 		return math.Sqrt(p * (p - sideLen) * (p - sideLen) * (p - sideLen))
 	case 4:
-		return float64(sidesNum) * float64(sidesNum)
+		return float64(sideLen) * float64(sideLen)
 	}
 	return 0.0
 }
