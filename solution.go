@@ -11,19 +11,22 @@ import "math"
 // CalcSquare(10.0, SidesCircle)
 
 const (
-	SidesCircle   uint8 = 0
-	SidesTriangle uint8 = 3
-	SidesSquare   uint8 = 4
+	SidesCircle   int = 0
+	SidesTriangle int = 3
+	SidesSquare   int = 4
 )
 
-type SideNums uint8
+type SideNums int
 
 func CalcSquare(sideLen float64, sidesNum SideNums) float64 {
-	switch {
-	case SidesCircle == uint8(sidesNum):
+	switch sidesNum {
+	case 0:
 		return math.Pi * sideLen * sideLen
-	case SidesTriangle == uint8(sidesNum):
-	case SidesSquare == uint8(sidesNum):
+	case 3:
+		var p float64 = (sideLen + sideLen + sideLen) / 2
+		return math.Sqrt(p * (p - sideLen) * (p - sideLen) * (p - sideLen))
+	case 4:
+		return float64(sidesNum) * float64(sidesNum)
 	}
 	return 0.0
 }
