@@ -11,9 +11,9 @@ import "math"
 // CalcSquare(10.0, SidesCircle)
 
 const (
-	SidesCircle   int = 0
-	SidesTriangle int = 3
-	SidesSquare   int = 4
+	SidesCircle   = 0
+	SidesTriangle = 3
+	SidesSquare   = 4
 )
 
 type SideNums int
